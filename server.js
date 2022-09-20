@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-var HTTP_PORT = 8000
+var HTTP_PORT = 3000
 
 // Start server
 app.listen(HTTP_PORT, () => {
@@ -20,6 +20,10 @@ app.get("/api/users", (req, res, next) => {
 
 app.get("/api/", (req, res, next) => {
     res.json({"message":"Ok from home"});
+});
+
+app.get("/", (req, res, next) => {
+    res.json({"message":"Ok from home home"});
 });
 
 app.get("/api/user/:id", (req, res, next) => {
